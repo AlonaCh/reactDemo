@@ -1,7 +1,7 @@
-const Footer = (props) => {
+const Footer = () => {
     return (
         <footer>
-            <h1>Coded by {props.copyright}</h1>
+            <h1>Footer will be here</h1>
         </footer>
     );
 };
