@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from "axios";
 import Card from './components/Card';
 
 import image from './assets/react.svg';
@@ -8,10 +9,14 @@ import Persons from './routes/Persons';
 import About from './routes/About';
 import Root from './routes/Root';
 import ErrorPage from './routes/ErrorPage';
+import Posts from './routes/Posts';
 
 function App() {
-  const [persons, setPersons] = useState([{ id: 1, name: "Inna", title: "CEO", age: 30 }, { id: 2, name: "Anna", title: "Developper", age: 31 }, { id: 3, name: "Alona", title: "Meneger", age: 40 }]);
+  const [persons, setPersons] = useState([{ id: 1, name: "Inna", title: "CEO", age: 30 }, { id: 2, name: "Anna", title: "Developer", age: 31 }, { id: 3, name: "Alona", title: "Meneger", age: 40 }]);
   const [search, setSearch] = useState('');
+
+
+
 
   //Routes
   const router = createBrowserRouter([
@@ -29,7 +34,8 @@ function App() {
             persons={persons}
           />)
         },
-        { path: '/about', element: <About /> }
+        { path: '/about', element: <About /> },
+        { path: '/posts', element: <Posts /> },
       ]
     },
   ])
